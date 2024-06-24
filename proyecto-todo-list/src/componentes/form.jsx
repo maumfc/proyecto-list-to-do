@@ -70,4 +70,3 @@ if (inputValue.trim() === '') {
 
 export default Form;
 
-hola
