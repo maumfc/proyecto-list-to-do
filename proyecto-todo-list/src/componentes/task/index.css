@@ -1,0 +1,10 @@
+.task {
+    border: 1px solid;
+    border-radius: 25px;
+    padding: 1%;
+     display: flex;
+     margin-bottom: 8px;
+}
+button{
+    background-color: aqua;
+}

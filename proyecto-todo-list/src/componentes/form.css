@@ -1,0 +1,11 @@
+.rawr{
+border: 1px solid;
+padding: 5px;
+height: auto;
+}
+.advo{
+border: 1px solid;
+padding: 5px;
+height: 200px;
+overflow: auto;
+}
