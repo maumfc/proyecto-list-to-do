@@ -5,44 +5,52 @@ import { UseForm } from './use-form';
 
 
 const Form = () => {
-   const {
-    cargarTareas,
-    handleSubmit,
-    handleInputChange,
-    handleDelete,
-    completarTarea,
-    incompletarTarea,
-    inputValue,
-    tasks,
-    tareasCompletadas
-} = UseForm()
-useEffect(()=>{
-    //cargarTareas()
-    
-},[])
+    const {
+        cargarTareas,
+        handleSubmit,
+        handleInputChange,
+        handleDelete,
+        completarTarea,
+        incompletarTarea,
+        inputValue,
+        tasks,
+        tareasCompletadas
+    } = UseForm()
+    useEffect(() => {
+        //cargarTareas()
+
+    }, [])
     return (
         <div className='rawr'>
             <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={inputValue}
-                    placeholder='Ingresar la tarea..'
-                    onChange={handleInputChange}
-                />
-                <button type='submit'>Agregar</button>
-                <h1>{tareasCompletadas}</h1> 
+                <div className='contenedor-agregar'>
+                    <input
+                        type="text"
+                        className='task-input'
+                        value={inputValue}
+                        placeholder='Ingresar la tarea..'
+                        onChange={handleInputChange}
+                    />
+                    <button className='btn_add' type='submit'>Agregar</button>
+                </div>
+                
             </form>
             <div className='advo'>
-                {tasks.length > 0 ? 
-                <ul>
-                {tasks.map((task, index) => (
-                   <Task key={index} index={index} nombre={task} deletes={handleDelete} completarTarea={completarTarea} incompletarTarea={incompletarTarea}/> 
-                   // <li key={index}>{task}</li>
-                ))}
-            </ul>   
-            :
-            <p>sin tareas</p> // Mostrar mensaje si no hay tareas
-            }
+                <div className='contenedor-completadas'>
+                    <p>Tareas Completadas: {tareasCompletadas}</p>
+
+                    </div>
+
+                {tasks.length > 0 ?
+                    <ul>
+                        {tasks.map((task, index) => (
+                            <Task key={index} index={index} nombre={task} deletes={handleDelete} completarTarea={completarTarea} incompletarTarea={incompletarTarea} />
+                            // <li key={index}>{task}</li>
+                        ))}
+                    </ul>
+                    :
+                    <p>Sin Tareas</p> // Mostrar mensaje si no hay tareas
+                }
             </div>
         </div>
     );
