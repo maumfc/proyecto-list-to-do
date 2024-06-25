@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import Form from './componentes/form';
+import Form from './componentes/form/form';
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0); 
 
   return (
     <div className="App">
